@@ -40,7 +40,7 @@ const Home = () => {
     
      <Users currentPage={currentPage}></Users></div>
 
-     <Pagination className='dark' >
+     <Pagination className='dark absolute bottom-0 left-[0vw]' >
   <PaginationContent >
     <PaginationItem>
       <PaginationPrevious onClick={handlePrevPage}  />

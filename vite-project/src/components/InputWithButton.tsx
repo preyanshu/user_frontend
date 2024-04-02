@@ -80,7 +80,7 @@ export function InputWithButton(props:any) {
                         {errors && <p className="text-red-500 text-sm">{errors}</p>}
                     </div>
                     <DialogFooter>
-                        <Button onClick={() => setOpen(false)}>Close</Button>
+                        
                         <Button type="submit" onClick={handleTeamCreation}> {loading ? 'Creating...' : 'Create Team'}</Button>
                     </DialogFooter>
                 </DialogContent>

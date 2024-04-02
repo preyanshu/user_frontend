@@ -94,6 +94,7 @@ const Users = (props: any) => {
       </div>
       {loading && <p>Loading...</p>}
   {error && <p>{error}</p>}
+  {users.length === 0 && <p>No users found</p>}
       <div className='h-[400px] w-screen flex justify-center  flex-wrap overflow-x-hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3  justify-items-center containerbox '>
  
   {users.map((user: any) => (
