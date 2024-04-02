@@ -38,7 +38,7 @@ export const fetchUsers = createAsyncThunk(
   async (options: any) => {
     try {
       const queryParams = new URLSearchParams(options).toString();
-      const response = await fetch(`http://localhost:5000/api/users?${queryParams}`);
+      const response = await fetch(`https://users-backend-3yxi.onrender.com/api/users?${queryParams}`);
       if (!response.ok) {
         throw new Error('Failed to fetch users');
       }

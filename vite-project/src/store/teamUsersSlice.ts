@@ -16,7 +16,7 @@ export const fetchAllUsers = createAsyncThunk(
   'teamUsers/fetchAllUsers',
   async () => {
     try {
-      const response = await fetch('http://localhost:5000/api/team/get/all');
+      const response = await fetch('https://users-backend-3yxi.onrender.com/api/team/get/all');
       if (!response.ok) {
         throw new Error('Failed to fetch users');
       }
@@ -32,7 +32,7 @@ export const createTeam = createAsyncThunk(
   'teamUsers/createTeam',
   async (teamData: any) => {
     try {
-      const response = await fetch('http://localhost:5000/api/team', {
+      const response = await fetch('https://users-backend-3yxi.onrender.com/api/team', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
