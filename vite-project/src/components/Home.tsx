@@ -11,6 +11,9 @@ import {
   } from "@/components/ui/pagination"
 import Users from './Users'
 import Teams from './Teams'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
   
 
 
@@ -75,7 +78,7 @@ const Home = () => {
 
 
 
-      
+<ToastContainer />   
     </div>
   )
 }

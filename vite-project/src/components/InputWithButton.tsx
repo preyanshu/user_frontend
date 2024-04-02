@@ -1,6 +1,8 @@
 import { useState } from "react";
 import { useDispatch,useSelector} from 'react-redux';
 import { createTeam } from '../store/teamUsersSlice';
+import { ToastContainer, toast } from 'react-toastify';
+  import 'react-toastify/dist/ReactToastify.css';
 
 import { Button } from "@/components/ui/button";
 import {
@@ -26,19 +28,19 @@ export function InputWithButton(props:any) {
 
     const handleTeamCreation = () => {
         if (teamName.trim() === '') {
-          alert('Please enter a team name');
+          toast.error('Please enter a team name',{theme:'dark'});
           return;
         }
         
         if (selectedUsers.length !== 2) {
-          alert('Team must consist of exactly two members');
+          toast.error('Team must consist of exactly two members',{theme:'dark'});
           return;
         }
 
         dispatch(createTeam({ userIds: selectedUsers.map((user:any) => user._id), teamName }) as any);
         setOpen(false); 
         if(!loading && !errors){
-            alert('Team created successfully');
+            toast.success('Team created successfully',{theme:'dark'});
         }
     };
 
@@ -48,10 +50,10 @@ export function InputWithButton(props:any) {
                 <Input type="text" className="w-1/2" placeholder="Search.." value={search.search} onChange={handleChange} />
                 <Button type="submit" className="w-1/5" onClick={()=>{
                     if(selectedUsers.length===0){
-                        alert("Please select users to create a team.");
+                        toast.error("select users to create a team.",{theme:'dark'});
                         return;
                     } else if(selectedUsers.length===1){
-                        alert("Please select more than one user to create a team.");
+                        toast("select more than one user to create a team.",{theme:'dark'});
                         return;
                     } else {
                         setOpen(true);

@@ -4,6 +4,8 @@ import { InputWithButton } from './InputWithButton';
 import { ComboboxForm } from './SelectorInput';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchUsers } from '../store/userSlice';
+import {toast } from 'react-toastify';
+
 
 const Users = (props: any) => {
   const { currentPage } = props;
@@ -68,7 +70,7 @@ const Users = (props: any) => {
     if (isUnique) {
       setSelectedUsers((prevSelectedUsers) => [...prevSelectedUsers, user]);
     } else {
-      alert('Choose unique members with different domains and availabilities');
+      toast.error('Choose unique members with different domains and availabilities',{theme:"dark"});
     }
   };
 
@@ -95,7 +97,7 @@ const Users = (props: any) => {
       {loading && <p>Loading...</p>}
   {error && <p>{error}</p>}
   {users.length === 0 && <p>No users found</p>}
-      <div className='h-[400px] w-screen flex justify-center  flex-wrap overflow-x-hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3  justify-items-center containerbox '>
+      <div className='h-[400px] w-screen flex justify-center  flex-wrap overflow-x-hidden grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3  justify-items-center containerbox mt-[6vh] xl:mt-0 '>
  
   {users.map((user: any) => (
     <UserCard key={user._id} user={user} handleUserSelection={handleUserSelection}  selectedUsers={selectedUsers} />
