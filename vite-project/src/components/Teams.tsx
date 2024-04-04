@@ -17,7 +17,7 @@ const Teams = () => {
   return (<>
   {loading && <div className='flex w-full h-full bg-black justify-center items-center text-white'><p>Loading...</p></div>}
   {error && <div className='flex w-full h-full  justify-center items-center text-white'><p>{error}</p></div>}
-  {teamUsers.length === 0 && <div className='flex w-full h-full  justify-center items-center text-white'><p>No teams found <br />Create team by selecting users</p></div>}
+  {!loading&&teamUsers.length === 0 && <div className='flex w-full h-full  justify-center items-center text-white'><p>No teams found <br />Create team by selecting users</p></div>}
 
 
   <div className='h-fit w-screen flex justify-center absolute left-0 flex-wrap'>

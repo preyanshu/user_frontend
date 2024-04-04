@@ -18,14 +18,7 @@ interface UsersState {
   error: string | null;
 }
 
-// interface FilterOptions {
-//   search?: string;
-//   domain?: string;
-//   gender?: string;
-//   available?: boolean;
-//   page: number;
-//   limit: number;
-// }
+
 
 const initialState: UsersState = {
   users: [],
